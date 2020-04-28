@@ -28,7 +28,6 @@ class CountriesSpider(scrapy.Spider):
 
             yield {
                 'country_name': name,
-                'country_link': response.url,
                 'year': year,
                 'population': population
             }
