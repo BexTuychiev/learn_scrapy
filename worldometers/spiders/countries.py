@@ -16,8 +16,7 @@ class CountriesSpider(scrapy.Spider):
 
             yield response.follow(link, callback=self.parse_countries, meta={'country_name': name})
 
-    @staticmethod
-    def parse_countries(response):
+    def parse_countries(self, response):
         name = response.request.meta['country_name']
         rows = response.xpath(
             "(//table[@class='table table-striped table-bordered table-hover table-condensed table-list'])[1]//tr["
